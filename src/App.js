@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { Button, Text, View } from 'react-native'
+import Icon from 'react-native-ionicons'
+import { Button, Text, View, ViewBase } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -63,7 +64,27 @@ const Tab = createBottomTabNavigator()
 const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName
+
+            if (route.name === 'Home') {
+              iconName = focused
+                ? 'information-circle'
+                : 'information-circle-outline'
+            } else if (route.name === 'Settings') {
+              iconName = focused ? 'list-box' : 'list'
+            }
+
+            return <Icon name={iconName} size={size} color={color} />
+          },
+        })}
+        tabBarOptions={{
+          activeTintColor: 'tomato',
+          inactiveTintColor: 'gray',
+        }}
+      >
         <Tab.Screen name="Home" component={HomeStackScreen} />
         <Tab.Screen name="Settings" component={SettingsStackScreen} />
       </Tab.Navigator>
