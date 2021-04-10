@@ -1,4 +1,3 @@
-[![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]  
 [![Contributors][contributors-shield]][contributors-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -38,9 +37,6 @@ You can setup and run the project by running:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
 [travis-image]: https://travis-ci.com/domi877/Dating.svg?branch=main
 [travis-url]: https://travis-ci.com/domi877/Dating
 [contributors-shield]: https://img.shields.io/github/contributors/domi877/Dating.svg?style=for-the-badge
