@@ -1,3 +1,10 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
 # Dating
 A Dating App for everybody
 
@@ -28,3 +35,13 @@ You can setup and run the project by running:
 - `cd ..` to come back to the root folder
 - `yarn start` to start the metro bundler, in a dedicated terminal
 - `yarn ios` to run the iOS application (remember to start a simulator or connect an iPhone phone)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/domi877/Dating.svg?style=for-the-badge
+[contributors-url]: https://github.com/domi877/Dating/graphs/contributors
+[stars-shield]: https://img.shields.io/github/stars/domi877/Dating.svg?style=for-the-badge
+[stars-url]: https://github.com/domi877/Dating/stargazers
+[issues-shield]: https://img.shields.io/github/issues/domi877/Dating.svg?style=for-the-badge
+[issues-url]: https://github.com/domi877/Dating/issues
+[linkedin-url]: https://www.linkedin.com/in/dominik-iffland-48a727202/
