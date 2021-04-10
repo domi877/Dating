@@ -42,7 +42,7 @@ You can setup and run the project by running:
 [npm-url]: https://npmjs.org/package/datadog-metrics
 [npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
 [travis-image]: https://img.shields.io/travis/domi877/Dating/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/domi877/Dating
+[travis-url]: https://travis-ci.com/domi877/Dating
 [contributors-shield]: https://img.shields.io/github/contributors/domi877/Dating.svg?style=for-the-badge
 [contributors-url]: https://github.com/domi877/Dating/graphs/contributors
 [stars-shield]: https://img.shields.io/github/stars/domi877/Dating.svg?style=for-the-badge
