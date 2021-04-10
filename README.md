@@ -1,5 +1,11 @@
+[![Build Status][travis-image]][travis-url]  
+[![Contributors][contributors-shield]][contributors-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
 # Dating
-Dating App for everybody
+A Dating App for everybody
 
 ## Requirements
 
@@ -18,10 +24,6 @@ You can setup and run the project by running:
 
 ### Android
 
-- only the first time you run the project, you need to generate a `debug key` with:
-  - `cd android/app`
-  - `keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000`
-  - `cd ../..` to come back to the root folder
 - `yarn start` to start the metro bundler, in a dedicated terminal
 - `yarn android` to run the Android application (remember to start a simulator or connect an Android phone)
 
@@ -32,3 +34,16 @@ You can setup and run the project by running:
 - `cd ..` to come back to the root folder
 - `yarn start` to start the metro bundler, in a dedicated terminal
 - `yarn ios` to run the iOS application (remember to start a simulator or connect an iPhone phone)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[travis-image]: https://travis-ci.com/domi877/Dating.svg?branch=main
+[travis-url]: https://travis-ci.com/domi877/Dating
+[contributors-shield]: https://img.shields.io/github/contributors/domi877/Dating.svg?style=for-the-badge
+[contributors-url]: https://github.com/domi877/Dating/graphs/contributors
+[stars-shield]: https://img.shields.io/github/stars/domi877/Dating.svg?style=for-the-badge
+[stars-url]: https://github.com/domi877/Dating/stargazers
+[issues-shield]: https://img.shields.io/github/issues/domi877/Dating.svg?style=for-the-badge
+[issues-url]: https://github.com/domi877/Dating/issues
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/dominik-iffland-48a727202/
