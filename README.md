@@ -15,6 +15,14 @@ You also need to install the dependencies required by React Native.
 Go to the [React Native environment setup](https://reactnative.dev/docs/environment-setup), then select `React Native CLI Quickstart` tab.  
 Follow instructions for your given `development OS` and `target OS`.
 
+### Enable Icons on target OS: Android
+
+Edit `android/app/build.gradle` ( NOT `android/build.gradle` ) and add the following:
+
+```gradle
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+```
+
 ## Quick start
 
 You can setup and run the project by running:
