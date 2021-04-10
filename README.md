@@ -1,8 +1,6 @@
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 # Dating
@@ -44,4 +42,5 @@ You can setup and run the project by running:
 [stars-url]: https://github.com/domi877/Dating/stargazers
 [issues-shield]: https://img.shields.io/github/issues/domi877/Dating.svg?style=for-the-badge
 [issues-url]: https://github.com/domi877/Dating/issues
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/dominik-iffland-48a727202/
