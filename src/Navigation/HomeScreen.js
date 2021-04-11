@@ -1,10 +1,11 @@
 import * as React from 'react'
 import { Button, Text, View } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
+import styles from '../style'
 
 function HomeScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={styles.center}>
       <Text>Home screen</Text>
       <Button
         title="Go to Chats"
