@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, View } from 'react-native'
 import styles from '../style'
 
-function shortTextAfterLengthN(text, n = 80) {
+function shortsTextAfterLengthN(text, n = 80) {
   return text.length > n ? text.substr(0, n - 1) + ' ...' : text
 }
 
@@ -14,13 +14,11 @@ const ChatWidget = props => {
       </View>
       <View style={{ flex: 1 }}>
         <View style={styles.row}>
-          <Text>{props.data.name}</Text>
-          <Text style={{ marginLeft: 'auto', marginRight: 10, opacity: 0.4 }}>
-            {props.data.timeStamp}
-          </Text>
+          <Text style={{ fontWeight: 'bold' }}>{props.data.name}</Text>
+          <Text style={styles.chatTimeStamp}>{props.data.timeStamp}</Text>
         </View>
         <Text style={{ opacity: 0.7 }}>
-          {shortTextAfterLengthN(props.data.text)}
+          {shortsTextAfterLengthN(props.data.text)}
         </Text>
       </View>
     </View>

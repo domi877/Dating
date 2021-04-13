@@ -13,6 +13,14 @@ export default StyleSheet.create({
     borderWidth: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
+    backgroundColor: '#f2f0ed',
+  },
+
+  chatTimeStamp: {
+    marginLeft: 'auto',
+    marginRight: 10,
+    opacity: 1.0,
+    color: '#697E74',
   },
 
   row: {
