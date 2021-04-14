@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler'
 import * as React from 'react'
 import { Icon } from 'react-native-elements'
 import { NavigationContainer } from '@react-navigation/native'
@@ -33,6 +34,7 @@ const Navigator = () => {
         tabBarOptions={{
           activeTintColor: 'tomato',
           inactiveTintColor: 'gray',
+          keyboardHidesTabBar: true,
         }}
       >
         <Tab.Screen name="Home" component={HomeStackScreen} />
