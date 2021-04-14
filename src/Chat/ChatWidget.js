@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, TouchableOpacity, View } from 'react-native'
 import styles from '../style'
 
 function shortsTextAfterLengthN(text, n = 80) {
@@ -8,7 +8,14 @@ function shortsTextAfterLengthN(text, n = 80) {
 
 const ChatWidget = props => {
   return (
-    <View style={styles.chatWidget}>
+    <TouchableOpacity
+      style={styles.chatWidget}
+      onPress={() =>
+        props.navigation.push('singleChat', {
+          data: props.data,
+        })
+      }
+    >
       <View style={styles.outerCircle}>
         <View style={styles.innerCircle} />
       </View>
@@ -21,7 +28,7 @@ const ChatWidget = props => {
           {shortsTextAfterLengthN(props.data.text)}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
