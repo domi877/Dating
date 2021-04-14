@@ -13,7 +13,54 @@ export default StyleSheet.create({
     borderWidth: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
+    backgroundColor: '#f2f0ed',
   },
+
+  chatTimeStamp: {
+    marginLeft: 'auto',
+    marginRight: 10,
+    opacity: 1.0,
+    color: '#697E74',
+  },
+
+  singleChatSelf: {
+    backgroundColor: '#EFF1F1',
+    width: '55%',
+    marginLeft: 'auto',
+    paddingRight: 10,
+  },
+
+  messageSelf: {
+    backgroundColor: 'tomato',
+    borderWidth: 1,
+    borderRadius: 10,
+    borderBottomLeftRadius: 0,
+    padding: 5,
+    paddingLeft: 12,
+    marginTop: 3,
+    color: 'white',
+  },
+
+  messageAuthorSelf: { color: 'gray', marginLeft: 25 },
+
+  singleChatOther: {
+    backgroundColor: '#EFF1F1',
+    width: '55%',
+  },
+
+  messageOther: {
+    backgroundColor: 'tomato',
+    borderWidth: 1,
+    borderRadius: 10,
+    borderBottomRightRadius: 0,
+    padding: 5,
+    paddingLeft: 12,
+    marginTop: 3,
+    marginLeft: 10,
+    color: 'white',
+  },
+
+  messageAuthorOther: { color: 'gray', marginLeft: 'auto', marginRight: 15 },
 
   row: {
     flexDirection: 'row',

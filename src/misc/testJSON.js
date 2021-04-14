@@ -1,0 +1,233 @@
+export const myUser = [
+  {
+    uuid: '1',
+    name: 'Dominik',
+    alter: '10',
+    text: 'TestText',
+    timeStamp: '2021-04-11',
+  },
+  {
+    uuid: '2',
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    uuid: '3',
+    name: 'Ahmet',
+    alter: '10',
+    text:
+      'TestText 1234345TestText 1234345TestText 1234345TestText 1234345TestText 1234345TestText 1234345TestText 1234345TestText 1234345TestText 1234345TestText 1234345TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text:
+      'Hallo Ahmet, wieso gehst du nicht an dein Handy? Ich habe dir schon so oft geschrieben, dass du mich zurückrufen sollst!!!',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+  {
+    name: 'Ahmet',
+    alter: '10',
+    text: 'TestText 1234345',
+    timeStamp: '2021-03-21',
+  },
+]
+
+export const myTexts = [
+  {
+    id: '1',
+    user1: '1',
+    user2: '2',
+    texts: [
+      {
+        value: 'Test Text',
+        receiver: '1',
+        sender: '2',
+        timestamp: '2021-09-05',
+      },
+      {
+        value: 'Noch ein Test',
+        receiver: '2',
+        sender: '1',
+        timestamp: '2021-09-05',
+      },
+      {
+        value: 'Wie gehts es? Test',
+        receiver: '1',
+        sender: '2',
+        timestamp: '2021-09-05',
+      },
+      {
+        value: 'Danke Test, mir geht es gut.',
+        receiver: '2',
+        sender: '1',
+        timestamp: '2021-09-05',
+      },
+      {
+        value: 'Wow Test, das ist doch toll. Was geht so bei dia?',
+        receiver: '1',
+        sender: '2',
+        timestamp: '2021-09-05',
+      },
+      {
+        value: 'Und was hast du gestern so gemacht?',
+        receiver: '1',
+        sender: '2',
+        timestamp: '2021-09-05',
+      },
+      {
+        value: 'Ich war einkaufen und so so??!!',
+        receiver: '2',
+        sender: '1',
+        timestamp: '2021-09-05',
+      },
+    ],
+  },
+]
