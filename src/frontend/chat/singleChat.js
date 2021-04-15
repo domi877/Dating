@@ -5,11 +5,19 @@ import { Icon } from 'react-native-elements'
 import { Text, View, TextInput, KeyboardAvoidingView } from 'react-native'
 import SingleMessage from './SingleMessage'
 import { myTexts } from '../misc/testJSON'
+import { IP } from '../misc/secrets'
 import { CurrentUserUUID } from '../App'
 
 const SingleChat = props => {
   const { data } = props.route.params
   const [text, onChangeText] = React.useState('')
+  function test() {
+    let adress = 'http://'.concat(IP, ':3001/users')
+    return fetch(adress)
+      .then(res => res.json())
+      .then(users => console.log(users))
+      .catch(e => console.log(e))
+  }
   return (
     <CurrentUserUUID.Consumer>
       {value => (
@@ -74,7 +82,7 @@ const SingleChat = props => {
                     reverse="true"
                     size={15}
                     onPress={() => {
-                      onChangeText()
+                      test()
                     }}
                   />
                 </View>
