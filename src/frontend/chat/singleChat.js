@@ -3,7 +3,7 @@ import styles from '../style'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Icon } from 'react-native-elements'
 import { Text, View, TextInput, KeyboardAvoidingView } from 'react-native'
-import SingleMessage from '../Chat/SingleMessage'
+import SingleMessage from './SingleMessage'
 import { myTexts } from '../misc/testJSON'
 import { CurrentUserUUID } from '../App'
 
