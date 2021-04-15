@@ -6,3 +6,5 @@ const App = () => {
 }
 
 export default App
+
+export const CurrentUserUUID = React.createContext('1')
