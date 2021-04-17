@@ -31,6 +31,17 @@ In order to obtain data from your local express server, create a `secrets.js` fi
 export const IP = 'YOUR_IP_HERE'
 ```
 
+You also have to provide a `db.js` file with your Microsoft SQL database credentials:
+
+```
+module.exports = {
+  username: 'YOUR_USERNAME',
+  password: 'YOUR_PASSWORD',
+  serverNmae: 'YOUR_SERVER_NAME',
+  databaseName: 'YOUR_DATABASE_NAME',
+}
+```
+
 ## Quick start
 
 You can setup and run the project by running:
