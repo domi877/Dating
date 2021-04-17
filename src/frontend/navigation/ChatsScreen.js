@@ -5,7 +5,6 @@ import ChatWidget from '../chat/ChatWidget'
 import SingleChat from '../chat/singleChat'
 import { ScrollView } from 'react-native-gesture-handler'
 import { myUser } from '../misc/testJSON'
-import { myTexts } from '../misc/testJSON'
 
 function ChatsScreen({ navigation }) {
   return (
