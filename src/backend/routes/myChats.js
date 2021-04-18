@@ -7,10 +7,9 @@ const {
 } = require('../../frontend/misc/db');
 var router = express.Router();
 
-router.get('/myChats', function (req, res) {
+router.get('/', function (req, res) {
 	var sql = require('mssql');
 
-	console.log(username, password, serverName, databaseName);
 	// config for your database
 	var config = {
 		user: username,
@@ -27,16 +26,16 @@ router.get('/myChats', function (req, res) {
 		var request = new sql.Request();
 
 		let userId = req.query.userId;
-		let sender =
-			"select * from messages where sender = '" +
+		let chats =
+			"SELECT * FROM chats WHERE user1 = '" +
 			userId +
 			"'" +
-			"OR receiver = '" +
+			"OR user2 = '" +
 			userId +
 			"'";
 
 		// query to the database and get the records
-		request.query(sender, function (err, recordset) {
+		request.query(chats, function (err, recordset) {
 			if (err) console.log(err);
 
 			// send records as a response
