@@ -9,7 +9,7 @@ function shortsTextAfterLengthN(text, n = 80) {
 }
 
 function getMessagesFromUser(userId) {
-  let adress = new URL('http://'.concat(IP, ':3001/myChats')),
+  let adress = new URL('http://'.concat(IP, ':3001/myChats/messages')),
     params = { userId: userId }
   Object.keys(params).forEach(key =>
     adress.searchParams.append(key, params[key]),
