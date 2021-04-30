@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Text, View } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -6,34 +6,38 @@ import ChatWidget from '../chat/ChatWidget'
 import SingleChat from '../chat/singleChat'
 import { IP } from '../misc/secrets'
 
-async function getChatsFromUser(
-  userId = '746EC066-CA16-4AF2-9A80-D8007DB8705E',
-) {
-  let adress = new URL('http://'.concat(IP, ':3001/myChats/messages')),
-    params = { userId: userId }
-  Object.keys(params).forEach(key =>
-    adress.searchParams.append(key, params[key]),
-  )
-  console.log(adress)
-  return fetch(adress)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data.recordset)
-      return data.recordset
-    })
-    .catch(e => console.log(e))
-}
+function ChatsScreen({ navigation }) {
+  const [userId, setUserId] = useState()
+  const [userData, setUserData] = useState()
 
-async function ChatsScreen({ navigation }) {
-  let data = await getChatsFromUser()
-  console.log(data)
+  useEffect((currentUserId = '746EC066-CA16-4AF2-9A80-D8007DB8705E') => {
+    let adress = new URL('http://'.concat(IP, ':3001/myChats')),
+      params = { userId: currentUserId }
+    Object.keys(params).forEach(key =>
+      adress.searchParams.append(key, params[key]),
+    )
+    setUserId(currentUserId)
+    fetch(adress)
+      .then(res => res.json())
+      .then(res => {
+        setUserData(res)
+      })
+      .catch(e => console.log(e))
+  }, [])
+
   return (
     <View>
       <ScrollView>
-        {data.map((item, key) => (
-          <Text key={key}>{item.uuid}</Text>
-          // <ChatWidget data={item} key={key} navigation={navigation} />
-        ))}
+        {userData?.recordset?.map((item, key) => {
+          return (
+            <ChatWidget
+              userId={userId}
+              data={item}
+              key={key}
+              navigation={navigation}
+            />
+          )
+        })}
       </ScrollView>
     </View>
   )

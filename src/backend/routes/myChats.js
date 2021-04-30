@@ -35,12 +35,40 @@ router.get('/', function (req, res) {
 			"'";
 
 		// query to the database and get the records
-		request.query(chats, function (err, recordset) {
-			if (err) console.log(err);
+		request
+			.query(chats)
+			.then((recordset) => {
+				recordset.recordset.forEach((chat) => {
+					let otherPersonId =
+						userId.toString() == chat.user1.toString()
+							? chat.user2
+							: chat.user1;
+					let otherPerson =
+						"SELECT * FROM messages WHERE chatID = '" +
+						chat.uuid +
+						"' ORDER BY time DESC";
 
-			// send records as a response
-			res.send(recordset);
-		});
+					request.query(otherPerson).then((response) => {
+						if (err) console.err(err);
+
+						let lastMessage = response.recordset[0];
+						chat.lastMessage = lastMessage;
+						console.log('doSomethinf!');
+					});
+				});
+				Promise.all(recordset.recordset).then(() => {
+					console.log('inner');
+					console.log(recordset);
+				});
+			})
+			.then((recordset) => {
+				console.log(recordset);
+				// send records as a response
+				res.send(recordset);
+			})
+			.catch((err) => {
+				console.err(err);
+			});
 	});
 });
 
