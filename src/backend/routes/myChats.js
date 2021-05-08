@@ -16,6 +16,7 @@ router.get('/', function (req, res) {
 		password: password,
 		server: serverName,
 		database: databaseName,
+		multipleStatements: true,
 	};
 
 	// connect to your database
@@ -34,40 +35,63 @@ router.get('/', function (req, res) {
 			userId +
 			"'";
 
+		let temp = [];
+
 		// query to the database and get the records
 		request
 			.query(chats)
 			.then((recordset) => {
-				recordset.recordset.forEach((chat) => {
+				console.log('1st');
+				return recordset;
+			})
+			.then((recordset) => {
+				console.log('2nd');
+				let usersChats = [];
+				return recordset.recordset.forEach((chat) => {
 					let otherPersonId =
 						userId.toString() == chat.user1.toString()
 							? chat.user2
 							: chat.user1;
-					let otherPerson =
+					let otherPersonDetail =
+						"SELECT firstName, lastName FROM users WHERE userID = '" +
+						otherPersonId +
+						"'";
+					let chatWithPerson =
 						"SELECT * FROM messages WHERE chatID = '" +
 						chat.uuid +
 						"' ORDER BY time DESC";
-
-					request.query(otherPerson).then((response) => {
-						if (err) console.err(err);
-
-						let lastMessage = response.recordset[0];
-						chat.lastMessage = lastMessage;
-						console.log('doSomethinf!');
-					});
-				});
-				Promise.all(recordset.recordset).then(() => {
-					console.log('inner');
-					console.log(recordset);
+					temp.push(
+						request
+							.query(chatWithPerson + ';' + otherPersonDetail)
+							.then((response) => {
+								if (err) console.err(err);
+								let otherPerson = response.recordsets[1][0];
+								let lastMessage = response.recordset[0];
+								chat.lastMessage = lastMessage;
+								chat.otherPerson = otherPerson;
+								usersChats.push(chat);
+								console.log('doSomethinf!');
+								return usersChats;
+							})
+							.then((obj) => {
+								console.log('3rd');
+								console.log(obj);
+								return obj;
+							})
+							.catch((err) => {
+								console.error(err);
+							})
+					);
 				});
 			})
-			.then((recordset) => {
-				console.log(recordset);
-				// send records as a response
-				res.send(recordset);
+			.then(() => {
+				Promise.all(temp).then((elem) => {
+					console.debug('elem', { elem: elem[0] });
+					res.send(elem[0]);
+				});
 			})
 			.catch((err) => {
-				console.err(err);
+				console.error(err);
 			});
 	});
 });

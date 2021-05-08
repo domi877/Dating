@@ -28,7 +28,7 @@ function ChatsScreen({ navigation }) {
   return (
     <View>
       <ScrollView>
-        {userData?.recordset?.map((item, key) => {
+        {userData?.map((item, key) => {
           return (
             <ChatWidget
               userId={userId}

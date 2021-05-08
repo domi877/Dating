@@ -26,12 +26,10 @@ router.get('/', function (req, res) {
 		var request = new sql.Request();
 
 		let userId = req.query.userId;
+		let chatId = req.query.chatId;
 		let messages =
-			"SELECT * FROM messages WHERE sender = '" +
-			userId +
-			"'" +
-			"OR receiver = '" +
-			userId +
+			"SELECT * FROM messages WHERE chatID ='" +
+			chatId +
 			"' ORDER BY time ASC";
 
 		// query to the database and get the records
