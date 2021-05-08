@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 import ChatWidget from '../chat/ChatWidget'
 import SingleChat from '../chat/singleChat'

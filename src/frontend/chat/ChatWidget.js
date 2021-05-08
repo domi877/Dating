@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import styles from '../style'
 import { IP } from '../misc/secrets'
@@ -52,6 +52,7 @@ class ChatWidget extends React.Component {
             onPress={async () => {
               this.props.navigation.push('singleChat', {
                 messages: this.state.data.recordset,
+                userId: currentUser,
               })
             }}
           >
