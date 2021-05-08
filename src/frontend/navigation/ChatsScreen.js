@@ -22,7 +22,7 @@ function ChatsScreen({ navigation }) {
       .then(res => {
         setUserData(res)
       })
-      .catch(e => console.log(e))
+      .catch(e => console.error(e))
   }, [])
 
   return (

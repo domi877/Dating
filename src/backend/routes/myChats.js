@@ -21,7 +21,7 @@ router.get('/', function (req, res) {
 
 	// connect to your database
 	sql.connect(config, function (err) {
-		if (err) console.log(err);
+		if (err) console.error(err);
 
 		// create Request object
 		var request = new sql.Request();
@@ -41,11 +41,9 @@ router.get('/', function (req, res) {
 		request
 			.query(chats)
 			.then((recordset) => {
-				console.log('1st');
 				return recordset;
 			})
 			.then((recordset) => {
-				console.log('2nd');
 				let usersChats = [];
 				return recordset.recordset.forEach((chat) => {
 					let otherPersonId =
@@ -64,18 +62,15 @@ router.get('/', function (req, res) {
 						request
 							.query(chatWithPerson + ';' + otherPersonDetail)
 							.then((response) => {
-								if (err) console.err(err);
+								if (err) console.error(err);
 								let otherPerson = response.recordsets[1][0];
 								let lastMessage = response.recordset[0];
 								chat.lastMessage = lastMessage;
 								chat.otherPerson = otherPerson;
 								usersChats.push(chat);
-								console.log('doSomethinf!');
 								return usersChats;
 							})
 							.then((obj) => {
-								console.log('3rd');
-								console.log(obj);
 								return obj;
 							})
 							.catch((err) => {

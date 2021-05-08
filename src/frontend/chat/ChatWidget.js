@@ -24,23 +24,22 @@ class ChatWidget extends React.Component {
   }
   componentDidMount() {
     if (this.props.userId !== undefined) {
-      this.fetchData(this.props.userId, this.props.data.uuid)
+      this.fetchData(this.props.data.uuid)
     }
   }
 
-  fetchData = (userId, chatId) => {
+  fetchData = chatId => {
     let adress = new URL('http://'.concat(IP, ':3001/myChats/messages')),
-      params = { userId: userId, chatId: chatId }
+      params = { chatId: chatId }
     Object.keys(params).forEach(key =>
       adress.searchParams.append(key, params[key]),
     )
     fetch(adress)
       .then(res => res.json())
       .then(data => {
-        console.debug('data', { data: data })
         this.setState({ data: data })
       })
-      .catch(e => console.log(e))
+      .catch(e => console.error(e))
   }
 
   render() {
@@ -51,8 +50,6 @@ class ChatWidget extends React.Component {
           <TouchableOpacity
             style={styles.chatWidget}
             onPress={async () => {
-              console.log('data')
-              console.log(this.state.data.recordset)
               this.props.navigation.push('singleChat', {
                 messages: this.state.data.recordset,
               })

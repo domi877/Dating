@@ -20,12 +20,11 @@ router.get('/', function (req, res) {
 
 	// connect to your database
 	sql.connect(config, function (err) {
-		if (err) console.log(err);
+		if (err) console.error(err);
 
 		// create Request object
 		var request = new sql.Request();
 
-		let userId = req.query.userId;
 		let chatId = req.query.chatId;
 		let messages =
 			"SELECT * FROM messages WHERE chatID ='" +
@@ -34,7 +33,7 @@ router.get('/', function (req, res) {
 
 		// query to the database and get the records
 		request.query(messages, function (err, recordset) {
-			if (err) console.log(err);
+			if (err) console.error(err);
 
 			// send records as a response
 			res.send(recordset);
