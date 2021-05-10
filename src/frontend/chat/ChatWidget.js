@@ -25,10 +25,13 @@ class ChatWidget extends React.Component {
   componentDidMount() {
     if (this.props.userId !== undefined) {
       this.fetchData(this.props.data.uuid)
+      setInterval(() => {
+        this.fetchData(this.props.data.uuid)
+      }, 2000)
     }
   }
 
-  fetchData = chatId => {
+  fetchData(chatId) {
     let adress = new URL('http://'.concat(IP, ':3001/myChats/messages')),
       params = { chatId: chatId }
     Object.keys(params).forEach(key =>

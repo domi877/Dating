@@ -2,16 +2,17 @@ import React from 'react'
 import styles from '../style'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Icon } from 'react-native-elements'
-import { Text, View, TextInput, KeyboardAvoidingView } from 'react-native'
+import { View, TextInput, KeyboardAvoidingView } from 'react-native'
 import SingleMessage from './SingleMessage'
+import { IP } from '../misc/secrets'
 
 class SingleChat extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       messages: [],
-      inputText: '',
       userId: '',
+      inputText: '',
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -27,24 +28,44 @@ class SingleChat extends React.Component {
     }
   }
 
-  handleChange(value) {
+  handleChange = value => {
     this.setState({ inputText: value })
   }
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     if (this.state.inputText) {
       let newMessage = {
-        uuid: '14C2DD8F-7393-4A07-A409-534F62BFA9i8',
-        chatID: 'F336409E-5B59-4160-A0EA-A9EA96959019',
+        chatID: this.state.messages[0].chatID,
         sender: this.state.userId,
-        receiver: '1EE1B931-0FB3-4F4F-B67E-00737CA37EA8',
+        receiver:
+          this.state.userId === this.state.messages[0].receiver
+            ? this.state.messages[0].sender
+            : this.state.messages[0].receiver,
         value: this.state.inputText,
-        time: '2021-05-09T18:50:32.347Z',
       }
       let newMessages = [...this.state.messages, newMessage]
       this.setState({ messages: newMessages, inputText: '' })
+      this.publishMessage(newMessage)
     }
     event.preventDefault()
+  }
+
+  publishMessage = message => {
+    let parameter = {}
+    for (const [key, value] of Object.entries(message)) {
+      parameter[key] = value
+    }
+    let adress = new URL('http://'.concat(IP, ':3001/myChats/messages/send')),
+      params = parameter
+    Object.keys(params).forEach(key =>
+      adress.searchParams.append(key, params[key]),
+    )
+    fetch(adress, { body: message, method: 'POST' })
+      .then(res => res.text())
+      .then(data => {
+        this.setState({ data: data })
+      })
+      .catch(e => console.error(e))
   }
 
   render() {

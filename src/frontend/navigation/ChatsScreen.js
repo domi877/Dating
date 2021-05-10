@@ -11,18 +11,20 @@ function ChatsScreen({ navigation }) {
   const [userData, setUserData] = useState()
 
   useEffect((currentUserId = '746EC066-CA16-4AF2-9A80-D8007DB8705E') => {
-    let adress = new URL('http://'.concat(IP, ':3001/myChats')),
-      params = { userId: currentUserId }
-    Object.keys(params).forEach(key =>
-      adress.searchParams.append(key, params[key]),
-    )
-    setUserId(currentUserId)
-    fetch(adress)
-      .then(res => res.json())
-      .then(res => {
-        setUserData(res)
-      })
-      .catch(e => console.error(e))
+    setInterval(() => {
+      let adress = new URL('http://'.concat(IP, ':3001/myChats')),
+        params = { userId: currentUserId }
+      Object.keys(params).forEach(key =>
+        adress.searchParams.append(key, params[key]),
+      )
+      setUserId(currentUserId)
+      fetch(adress)
+        .then(res => res.json())
+        .then(res => {
+          setUserData(res)
+        })
+        .catch(e => console.error(e))
+    }, 2000)
   }, [])
 
   return (
