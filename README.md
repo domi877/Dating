@@ -18,7 +18,7 @@ Follow instructions for your given `development OS` and `target OS`.
 
 ### Enable Icons on target OS: Android
 
-Edit `android/app/build.gradle` ( NOT `android/build.gradle` ) and add the following (of not already present):
+Edit `android/app/build.gradle` ( NOT `android/build.gradle` ) and add the following (if not already present):
 
 ```gradle
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
