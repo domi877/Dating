@@ -6,5 +6,5 @@ Install all dependencies in this `backend` folder by using the command `npm inst
 
 ## Start
 
-Start the app by typing `node bin/www`. This starts the express backend server on port 3001 (Don't worry, nothing will show in the terminal.).
+Start the app by typing `yarn start`. This starts the express backend server on port 3001 (Don't worry, nothing will show in the terminal.).
 To test that your server is working correct, access the URl in your browser: `localhost:3001/users`.
